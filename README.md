@@ -3,5 +3,5 @@ A reporitory to store the tutorials for CS3450 Game Development. This mosudle us
 
 Tutorials include:
 <ol>
-<li>Tanks tutorial</li>
+<li>Tanks tutorial, Terrain creation, Material manipulation, Colliders, Skyboxes</li>
 </ol>

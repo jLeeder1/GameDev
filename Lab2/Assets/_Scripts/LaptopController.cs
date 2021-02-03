@@ -9,16 +9,15 @@ public class LaptopController : MonoBehaviour
     private Text laptopTimeText;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        Canvas canvas = GameObject.FindObjectOfType<Canvas>();
-        laptopTimeText = canvas.GetComponentInChildren<Text>();
-        Debug.Log(laptopTimeText);
+        //Canvas canvas = GetComponentInParent<Canvas>();
+        //laptopTimeText = canvas.GetComponentInChildren<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        laptopTimeText.text = Time.timeSinceLevelLoad.ToString();
+        //laptopTimeText.text = Time.timeSinceLevelLoad.ToString();
     }
 }

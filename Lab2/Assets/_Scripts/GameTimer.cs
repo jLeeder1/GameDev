@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameTimer : MonoBehaviour
 {
     private Text text;
-    private int startTime = 60;
+    private int startTime = 1000;
     private GameObject firstPersonController;
     private Canvas canvas;
     private Image image;

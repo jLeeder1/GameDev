@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CubeController : MonoBehaviour {
+public class CubeController : MonoBehaviour, InteractiveObjectBase
+{
 
 	Color[] colours;
 	int colourIndex;
 	MeshRenderer renderer;
 
-	void Awake() 
+	void Awake()
 	{
 		// fill array with colours
 		colours = new Color[5];
@@ -23,13 +24,13 @@ public class CubeController : MonoBehaviour {
 		UpdateMaterial ();
 	}
 
-	void UpdateMaterial() 
+	void UpdateMaterial()
 	{
 		// update the colour of the renderer's material
 		renderer.material.color = colours [colourIndex];
 	}
-	
-	public void ChangeColour() 
+
+	public void ChangeColour()
 	{
 		// select next colour in the array and then update material
 		colourIndex++;
@@ -37,4 +38,11 @@ public class CubeController : MonoBehaviour {
 		UpdateMaterial ();
 	}
 
+    public void OnInteraction(bool shouldChangeColour)
+    {
+        if (shouldChangeColour)
+        {
+			ChangeColour();
+		}
+    }
 }

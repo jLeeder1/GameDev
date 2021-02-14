@@ -19,11 +19,6 @@ public class CameraController : MonoBehaviour
     // easing variable
     public float easing = 0.25f;
 
-    private void Start()
-    {
-        displacementY = 1.5f;
-    }
-
     /*
     Update the cameras position to follow the target
     */

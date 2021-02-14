@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/_Scenes/ThirdPersonDemoScene.unity
+- path: Assets/_Scenes/game.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

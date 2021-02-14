@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class CharacterMotor : MonoBehaviour 
+public class CharacterMotor : MonoBehaviour
 {
 	public bool IsGrounded { get {return characterController.isGrounded;}}
 
@@ -19,36 +19,35 @@ public class CharacterMotor : MonoBehaviour
 	private CharacterController characterController;
 
 
-
-
 	void Awake()
 	{
 		characterController = GetComponent<CharacterController>();
 	}
 
-	void Update() 
+	void Update()
 	{
 
+
 	    // if we are on the ground then allow movement
-	    if (IsGrounded) 
+	    if (IsGrounded)
 	    {
 			float input = Input.GetAxis("Vertical");
 	        bool  isMoving = (input != 0);
 
 			moveDirection.x = transform.forward.x;
 			moveDirection.z = transform.forward.z;
-	        
-			if (isMoving) 
+
+			if (isMoving)
 			{
 				currentSpeed += ((acceleration * input) * Time.deltaTime);
 				currentSpeed = Mathf.Clamp(currentSpeed, -maxSpeed, maxSpeed);
 			}
-			else if (currentSpeed > 0) 
+			else if (currentSpeed > 0)
 			{
 				currentSpeed -= (decceleration * Time.deltaTime);
 				currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
 			}
-			else if (currentSpeed < 0) 
+			else if (currentSpeed < 0)
 			{
 				currentSpeed += (decceleration * Time.deltaTime);
 				currentSpeed = Mathf.Clamp(currentSpeed, -maxSpeed, 0);
@@ -59,8 +58,8 @@ public class CharacterMotor : MonoBehaviour
 
 			moveDirection.y  = Mathf.Max(0, moveDirection.y);
 
-	        
-			if (Input.GetButton("Jump")) 
+
+			if (Input.GetButton("Jump"))
 			{
 				moveDirection.y = jumpSpeed;
 			}
@@ -75,5 +74,5 @@ public class CharacterMotor : MonoBehaviour
 
 		characterController.Move(moveDirection * Time.deltaTime);
 	}
-	
+
 }
